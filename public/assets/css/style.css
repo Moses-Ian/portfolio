@@ -135,6 +135,7 @@ h2 {
 	margin-right: var(--right-margin-large);
 	max-height: 600px;
 	flex: 1 0 0;
+	overflow: hidden;
 }
 
 .project {

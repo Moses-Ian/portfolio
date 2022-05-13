@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Header = ({currentArticle, setArticle}) => {
+const Header = ({currentArticle, setArticle, setNextArticle}) => {
 	return (
 		<header>
 			<div className="name">
@@ -9,19 +9,19 @@ const Header = ({currentArticle, setArticle}) => {
 			<nav id="links">
 				<div>
 					<a className={currentArticle === 'about' ? 'current-article' : ''}
-						onClick={() => setArticle('about')}>
+						onClick={() => setNextArticle('about')}>
 						About Me
 					</a>
 					<a className={currentArticle === 'work' ? 'current-article' : ''} 
-						onClick={() => setArticle('work')}>
+						onClick={() => setNextArticle('work')}>
 						Work
 					</a>
 					<a className={currentArticle === 'contact' ? 'current-article' : ''} 
-						onClick={() => setArticle('contact')}>
+						onClick={() => setNextArticle('contact')}>
 						Contact Me
 					</a>
 					<a className={currentArticle === 'resume' ? 'current-article' : ''}
-						onClick={() => setArticle('resume')}>
+						onClick={() => setNextArticle('resume')}>
 						Resume
 					</a>
 				</div>

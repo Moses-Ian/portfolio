@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSpring, useTransition, config, animated } from "react-spring";
 import Project from './Project';
 import Title from './Title';
 
@@ -45,18 +46,47 @@ const projects = [
 	}
 ]
 
-const Work = () => {
-	return (
-		<article>
-			<Title title='Work' />
-			<div className="work-projects">
+const height = 582	//height on my screen
+// const height = 100	//height on my screen
+// const height = 450	//height on my screen
+
+const Work = ({nextArticle, setArticle}) => {
+
+	const visible = nextArticle === 'work';
+
+  const fadeStyles = useSpring({
+    config: { ...config.molasses },
+    from: { opacity: 0 },
+    to: {
+      opacity: visible ? 1 : 0
+    },
+		leave: { opacity: 0 }
+  });
+	
+  const slideInStyles = useSpring({
+    config: { ...config.wobbly },
+    from: { opacity: 0, height: 0 },
+    to: {
+      opacity: visible ? 1 : 0,
+      height: visible ? height : 0
+    }
+  });
+
+	useEffect(() => {
+		setTimeout(() => setArticle(nextArticle), 500);
+	});
+
+return (
+		<animated.article style={slideInStyles}>
+			<Title title='Work' visible={visible}/>
+			<animated.div className="work-projects" style={fadeStyles}>
 			{
 				projects.map(project => (
 					<Project props={project} key={project.id}/>
 				))
 			}
-			</div>
-		</article>
+			</animated.div>
+		</animated.article>
 	)
 };
 
