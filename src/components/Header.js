@@ -4,7 +4,7 @@ const Header = ({currentArticle, setArticle}) => {
 	return (
 		<header>
 			<div className="name">
-				<h1><a href="#">Ian Moses v0.0.3</a></h1>
+				<h1><a href="#">Ian Moses v0.0.4</a></h1>
 			</div>
 			<nav id="links">
 				<div>
