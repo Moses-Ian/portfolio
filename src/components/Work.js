@@ -70,8 +70,6 @@ const Work = ({nextArticle, setArticle}) => {
 		height = heightDict['medium'];
 	else
 		height = heightDict['large'];
-	console.log(isMedium);
-	console.log(height);
 
   const fadeStyles = useSpring({
     config: { ...config.molasses },

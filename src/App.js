@@ -14,8 +14,6 @@ function App() {
 	const [currentArticle, setArticle] = useState(startPage);
 	const [nextArticle, setNextArticle] = useState(startPage);
 	
-	console.log(`App: currentArticle = ${currentArticle}`);
-
   return (
     <div className="App">
 			<Header 

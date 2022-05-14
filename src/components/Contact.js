@@ -45,10 +45,8 @@ const Contact = ({nextArticle, setArticle}) => {
 			else
 				h = heightDict['large'];
 		}
-		console.log(h);
 		return h;
 	}
-	// setHeight(calcHeight);
 
 	const [height, setHeight] = useState(calcHeight());
 	
