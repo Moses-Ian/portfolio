@@ -7,10 +7,12 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
 
+const startPage = 'work';	//for debugging
+
 function App() {
 	
-	const [currentArticle, setArticle] = useState('about');
-	const [nextArticle, setNextArticle] = useState('about');
+	const [currentArticle, setArticle] = useState(startPage);
+	const [nextArticle, setNextArticle] = useState(startPage);
 	
 	console.log(`App: currentArticle = ${currentArticle}`);
 
