@@ -7,7 +7,7 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
 
-const startPage = 'work';	//for debugging
+const startPage = 'about';	//for debugging
 
 function App() {
 	
@@ -20,14 +20,13 @@ function App() {
     <div className="App">
 			<Header 
 				currentArticle={currentArticle}
-				setArticle={setArticle}
 				setNextArticle={setNextArticle}
 			/>
 			<Hero />
 			{ currentArticle === 'about' && <About nextArticle={nextArticle} setArticle={setArticle}/> }
 			{ currentArticle === 'work' && <Work nextArticle={nextArticle} setArticle={setArticle} /> }
-			{ currentArticle === 'contact' && <Contact /> }
-			{ currentArticle === 'resume' && <Resume /> }
+			{ currentArticle === 'contact' && <Contact nextArticle={nextArticle} setArticle={setArticle} /> }
+			{ currentArticle === 'resume' && <Resume nextArticle={nextArticle} setArticle={setArticle} /> }
 			<Footer />
     </div>
   );

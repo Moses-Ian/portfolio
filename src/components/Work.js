@@ -46,7 +46,7 @@ const projects = [
 	}
 ]
 
-const height = 582	//height on my screen
+const height = 582;	//height on my screen
 // const height = 100	//height on my screen
 // const height = 450	//height on my screen
 
@@ -78,7 +78,7 @@ const Work = ({nextArticle, setArticle}) => {
 
 return (
 		<animated.article style={slideInStyles}>
-			<Title title='Work' visible={visible}/>
+			<Title title='Work' visible={visible} />
 			<animated.div className="work-projects" style={fadeStyles}>
 			{
 				projects.map(project => (

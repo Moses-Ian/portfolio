@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Header = ({currentArticle, setArticle, setNextArticle}) => {
+const Header = ({currentArticle, setNextArticle}) => {
 	return (
 		<header>
 			<div className="name">

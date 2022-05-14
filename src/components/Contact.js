@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSpring, useTransition, config, animated } from "react-spring";
 import { validateEmail } from '../utils/helpers';
 import Title from './Title';
 
-const Contact = () => {
+const height = 219;	//height on my screen
+
+const Contact = ({nextArticle, setArticle}) => {
+	
+	//error message nonsense
 	const [errorMessage, setErrorMessage] = useState('');
 	const [formState, setFormState] = useState({ name: '', email: '', message: '' });
 	const { name, email, message } = formState;
@@ -36,11 +41,36 @@ const Contact = () => {
 		e.preventDefault();
 		console.log(formState);
 	}
+	
+	//animation nonsense
+	const visible = nextArticle === 'contact';
+
+  const fadeStyles = useSpring({
+    config: { ...config.molasses },
+    from: { opacity: 0 },
+    to: {
+      opacity: visible ? 1 : 0
+    },
+		leave: { opacity: 0 }
+  });
+	
+  const slideInStyles = useSpring({
+    config: { ...config.wobbly },
+    from: { opacity: 0, height: 0 },
+    to: {
+      opacity: visible ? 1 : 0,
+      height: visible ? height : 0
+    }
+  });
+
+	useEffect(() => {
+		setTimeout(() => setArticle(nextArticle), 500);
+	});
 
 	return (
-		<article>
-			<Title title='Contact Me' />
-			<div className="contact-info">
+		<animated.article style={slideInStyles}>
+			<Title title='Contact Me' visible={visible} />
+			<animated.div className="contact-info" style={fadeStyles}>
 				<form id="contact-form" onSubmit={handleSubmit}>
 					<div>
 						<label htmlFor="name">Name:</label>
@@ -61,8 +91,8 @@ const Contact = () => {
 					)}
 					<button type="submit" data-testid="submit">Submit</button>
 				</form>
-			</div>
-		</article>
+			</animated.div>
+		</animated.article>
 	)
 };
 

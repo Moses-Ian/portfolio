@@ -1,11 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSpring, useTransition, config, animated } from "react-spring";
 import Title from './Title';
 
-const Resume = () => {
+const height = 799;	//height on my screen
+
+const Resume = ({nextArticle, setArticle}) => {
+	const visible = nextArticle === 'resume';
+
+  const fadeStyles = useSpring({
+    config: { ...config.molasses },
+    from: { opacity: 0 },
+    to: {
+      opacity: visible ? 1 : 0
+    },
+		leave: { opacity: 0 }
+  });
+	
+  const slideInStyles = useSpring({
+    config: { ...config.wobbly },
+    from: { opacity: 0, height: 0 },
+    to: {
+      opacity: visible ? 1 : 0,
+      height: visible ? height : 0
+    }
+  });
+
+	useEffect(() => {
+		setTimeout(() => setArticle(nextArticle), 500);
+	});
+
 	return (
-		<article>
-			<Title title='Resume' />
-			<div className='about-text'>
+		<animated.article style={slideInStyles}>
+			<Title title='Resume' visible={visible} />
+			<animated.div className='about-text' style={fadeStyles}>
 				<p><a href='assets/files/ian-moses-full-stack-developer.pdf'>Download my resume.</a></p>
 				<p>Front-end Proficiencies</p>
 				<ul>
@@ -41,8 +68,8 @@ const Resume = () => {
 					<li>Teamwork</li>
 					<li>Adaptability</li>
 				</ul>
-			</div>
-		</article>
+			</animated.div>
+		</animated.article>
 	)
 };
 
