@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, useTransition, config, animated } from "react-spring";
+import {useMedia} from 'react-use';
 import Project from './Project';
 import Title from './Title';
 
@@ -46,13 +47,31 @@ const projects = [
 	}
 ]
 
-const height = 582;	//height on my screen
-// const height = 100	//height on my screen
-// const height = 450	//height on my screen
+const heightDict = {
+	large: 582,	//height on my screen
+	medium: 1050,
+	small: 1018,
+	xsmall: 1065
+};
 
 const Work = ({nextArticle, setArticle}) => {
 
 	const visible = nextArticle === 'work';
+
+	const isMedium = useMedia('(max-width: 980px)');
+	const isSmall  = useMedia('(max-width: 768px)');
+	const isXSmall = useMedia('(max-width: 576px)');
+	let height;
+	if (isXSmall)
+		height = heightDict['xsmall'];
+	else if (isSmall)
+		height = heightDict['small'];
+	else if (isMedium)
+		height = heightDict['medium'];
+	else
+		height = heightDict['large'];
+	console.log(isMedium);
+	console.log(height);
 
   const fadeStyles = useSpring({
     config: { ...config.molasses },
