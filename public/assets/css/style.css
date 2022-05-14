@@ -227,6 +227,11 @@ h3 {
 	background-color: var(--bg);
 }
 
+.github img:active {
+	background-color: var(--fourth-color);
+	box-shadow: 0 0 5px 5px var(--secondary-color);
+}
+
 /* CONTACT ME */
 .contact-form {
 	display: block;
