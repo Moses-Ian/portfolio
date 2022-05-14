@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSpring, useTransition, config, animated } from "react-spring";
 import Title from './Title';
 
-const height = 799;	//height on my screen
+const height = 760;	//height on my screen
 const pub = process.env.PUBLIC_URL;
 
 const Resume = ({nextArticle, setArticle}) => {

@@ -285,6 +285,8 @@ h3 {
 
 /* RESUME */
 .resume {
+	display: inline-block;
+	margin-top: 18px;
 	font-size: 30px;
 	color: var(--secondary-color);
 	/* text-shadow: 0 0 6px var(--primary-color); */
@@ -383,6 +385,10 @@ h3 {
 	
 	.subtitle {
 		margin-bottom: var(--right-margin-small);
+	}
+	
+	.about-text {
+		margin-right: 25px;
 	}
 	
 	.about-text p {
