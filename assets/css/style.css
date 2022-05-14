@@ -135,6 +135,7 @@ h2 {
 	margin-right: var(--right-margin-large);
 	max-height: 600px;
 	flex: 1 0 0;
+	overflow: hidden;
 }
 
 .project {
@@ -245,6 +246,24 @@ h3 {
 	z-index: 9999;
 	padding-left: 30%;
 	padding-right: 30%;
+}
+
+.footer img {
+	height: 40px;
+	width: 40px;
+	position: relative;
+	left: -1px;
+	top: -1px;
+	
+}
+
+.footer a {
+	/* box-shadow: 0px 0px 15px 20px var(--secondary-color); */
+	height: 38px;
+	width: 38px;
+	border-radius: 30px;
+	background-color: transparent;
+	position: relative;
 }
 
 
