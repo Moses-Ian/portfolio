@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 
+const pub = process.env.PUBLIC_URL;
+
 const Header = ({currentArticle, setNextArticle}) => {
+
+	const toggleNav = () => {
+		let x = document.getElementById("links");
+		if (x.style.display === "block") {
+			x.style.display = "none";
+		} else {
+			x.style.display = "block";
+		}
+	};
+
 	return (
 		<header>
 			<div className="name">
@@ -26,8 +38,8 @@ const Header = ({currentArticle, setNextArticle}) => {
 					</a>
 				</div>
 			</nav>
-			<a href="javascript:void(0);" className="icon" onClick="myFunction()">
-				<img className="hamburger" src="./assets/images/hamburger-icon.png" />
+			<a href="javascript:void(0);" className="icon" onClick={toggleNav}>
+				<img className="hamburger" src={pub + "/assets/images/hamburger-icon.png"} />
 			</a>
 		</header>
 	)
