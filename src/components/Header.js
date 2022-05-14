@@ -46,7 +46,7 @@ const Header = ({currentArticle, setNextArticle}) => {
 					</a>
 				</div>
 			</nav>
-			<a href="javascript:void(0);" className="icon" onClick={toggleNav}>
+			<a className="icon" onClick={toggleNav}>
 				<img className="hamburger" src={pub + "/assets/images/hamburger-icon.png"} />
 			</a>
 		</header>
