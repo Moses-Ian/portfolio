@@ -214,34 +214,56 @@ h3 {
 }
 
 /* CONTACT ME */
-.contact-info {
-	flex: 1 0 auto;
-	display: flex;
-	align-items: center;
+.contact-form {
+	display: block;
+	margin: 18px 80px 18px 0;
+	width: fit-content;
 }
 
-.contact-info ul {
-	display: flex;
-	justify-content: space-evenly;
-	list-style: none;
-	padding: 0;
-	flex: 1;
-	margin-right: var(--right-margin-large);
-	flex-wrap: wrap;
-	/* max-width: 70vw; */
+.contact-form button {
+	color: var(--secondary-color);
+	font-weight: bold;
+	background-color: var(--third-color);
+	border: none;
+	font-size: 20px;
+	width: 100%;
+	transition: 
+		background-color 250ms ease,
+		box-shadow 250ms ease;
 }
 
-.contact-info ul li {
-	padding: 5px;
-	margin: 2px;
-	border-bottom: 4px solid var(--primary-color);
-	font-size: 16px;
+.contact-form button:hover {
+	background-color: var(--primary-color);
+	box-shadow: 0 0 5px 2px var(--secondary-color);
 }
 
-.contact-info a {
-	color: black;
+.contact-form button:active {
+	color: var(--fourth-color);
+	box-shadow: 0 0 7px 4px var(--fourth-color);
 }
 
+.form-input {
+	border: 1px solid var(--third-color);
+	display: block;
+	padding: 7px 7px;
+	font-size: 18px;
+	width: calc(100% - 14px - 2px);
+	margin-bottom: 7px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.form-input:focus {
+	background-color: rgba(255,255,255,1);
+	outline-color: var(--third-color);
+}
+
+.contact-form label {
+	display: inline-block;
+	font-size: 20px;
+	margin-bottom: 2px;
+}
+
+/* RESUME */
 .resume {
 	font-size: 30px;
 	color: var(--secondary-color);

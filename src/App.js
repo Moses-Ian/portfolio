@@ -7,7 +7,7 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
 
-const startPage = 'resume';	//for debugging
+const startPage = 'contact';	//for debugging
 
 function App() {
 	
