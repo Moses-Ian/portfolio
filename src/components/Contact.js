@@ -1,15 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, useTransition, config, animated } from "react-spring";
+import {useMedia} from 'react-use';
 import { validateEmail } from '../utils/helpers';
 import Title from './Title';
 
 const heightDefault = 357;	//height on my screen
 const heightError = 407;		//height on my screen
+const heightDict = {
+	large: 357,	//height on my screen
+	largeErr: 407,	//height on my screen
+	medium: 357,
+	mediumErr: 407,
+	small: 357,
+	smallErr: 407,
+	xsmall: 385,
+	xsmallErr: 437
+};
 
 const Contact = ({nextArticle, setArticle}) => {
 	
 	//height can change
-	const [height, setHeight] = useState(heightDefault);
+	const isMedium = useMedia('(max-width: 980px)');
+	const isSmall  = useMedia('(max-width: 768px)');
+	const isXSmall = useMedia('(max-width: 576px)');
+	
+	function calcHeight(err=false) {
+		let h;
+		if(err) {
+			if (isXSmall)
+				h = heightDict['xsmallErr'];
+			else if (isSmall)
+				h = heightDict['smallErr'];
+			else if (isMedium)
+				h = heightDict['mediumErr'];
+			else
+			h = heightDict['largeErr'];
+		} else {
+			if (isXSmall)
+				h = heightDict['xsmall'];
+			else if (isSmall)
+				h = heightDict['small'];
+			else if (isMedium)
+				h = heightDict['medium'];
+			else
+				h = heightDict['large'];
+		}
+		console.log(h);
+		return h;
+	}
+	// setHeight(calcHeight);
+
+	const [height, setHeight] = useState(calcHeight());
 	
 	//error message nonsense
 	const [errorMessage, setErrorMessage] = useState('');
@@ -40,12 +81,7 @@ const Contact = ({nextArticle, setArticle}) => {
 			setFormState({ ...formState, [e.target.name]: e.target.value });
 		}
 		
-		if (err) {
-			setHeight(heightError);
-			console.log("set height to error");
-		} else {
-			setHeight(heightDefault);
-		}
+		setHeight(calcHeight(err));
 	}
 	
 	function handleSubmit(e) {

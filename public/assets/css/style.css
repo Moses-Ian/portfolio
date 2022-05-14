@@ -368,7 +368,7 @@ h3 {
 		margin-right: 10px;
 		margin-left: 10px;
 		padding-left: 0;
-		width: calc(100% - 20px);
+		width: 120px;
 	}
 	
 	h1 {
@@ -516,6 +516,10 @@ h3 {
 		margin: 0;
 		width: 100%;
 		flex: none;
+	}
+
+	.contact-form {
+		margin: 18px auto;
 	}
 }
 
