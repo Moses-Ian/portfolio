@@ -152,6 +152,7 @@ h2 {
 	justify-content: space-between;
 	margin-right: var(--right-margin-large);
 	max-height: 600px;
+	min-height: 582px;
 	flex: 1 0 0;
 	overflow: hidden;
 }
