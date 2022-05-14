@@ -416,6 +416,11 @@ h3 {
 	.contact-info ul {
 		flex: 0 1 70vw;;
 	}
+	
+	.footer {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
 }
 
 @media screen and (max-width: 576px) {
