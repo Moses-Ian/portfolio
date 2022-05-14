@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useMedia} from 'react-use';
 
 const pub = process.env.PUBLIC_URL;
 
@@ -12,6 +13,13 @@ const Header = ({currentArticle, setNextArticle}) => {
 			x.style.display = "block";
 		}
 	};
+	
+	const isXSmall = useMedia('(max-width: 576px)');
+	
+	useEffect(() => {
+		if (!isXSmall)
+			document.getElementById("links").style.display = "block";
+	});
 
 	return (
 		<header>

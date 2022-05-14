@@ -390,6 +390,10 @@ h3 {
 		border-bottom: 4px solid var(--secondary-color);
 		font-size: 14px;
 	}
+	
+	#links {
+		display: block;
+	}
 
 	.subtitle {
 		margin-bottom: var(--right-margin-small);
