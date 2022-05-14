@@ -3,6 +3,7 @@ import { useSpring, useTransition, config, animated } from "react-spring";
 import Title from './Title';
 
 const height = 799;	//height on my screen
+const pub = process.env.PUBLIC_URL;
 
 const Resume = ({nextArticle, setArticle}) => {
 	const visible = nextArticle === 'resume';
@@ -33,7 +34,7 @@ const Resume = ({nextArticle, setArticle}) => {
 		<animated.article style={slideInStyles}>
 			<Title title='Resume' visible={visible} />
 			<animated.div className='about-text' style={fadeStyles}>
-				<p><a href='assets/files/ian-moses-full-stack-developer.pdf'>Download my resume.</a></p>
+				<h3><a className='resume' href={pub + '/assets/files/ian-moses-full-stack-developer.pdf'}>Download my resume.</a></h3>
 				<p>Front-end Proficiencies</p>
 				<ul>
 					<li>HTML</li>

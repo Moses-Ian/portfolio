@@ -152,13 +152,8 @@ h2 {
 	display: flex;
 	align-items: flex-end;
 	background-size: cover;
-	/* opacity: 0.5; */
 	position: relative;	/*needed for the link to work*/
 }
-
-/* .project:hover { */
-	/* opacity: 1.0; */
-/* } */
 
 .project a { 
   position:absolute; 
@@ -245,6 +240,23 @@ h3 {
 
 .contact-info a {
 	color: black;
+}
+
+.resume {
+	color: var(--secondary-color);
+	text-shadow: 
+		 1px  1px var(--primary-color),
+		-1px -1px var(--primary-color),
+		 1px -1px var(--primary-color),
+		-1px  1px var(--primary-color);
+}
+
+.resume:hover {
+	color: var(--bg);
+}
+
+.resume:active {
+	color: var(--fourth-color);
 }
 
 .footer {
