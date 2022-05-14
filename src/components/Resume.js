@@ -1,12 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, useTransition, config, animated } from "react-spring";
+import {useMedia} from 'react-use';
 import Title from './Title';
 
 const height = 760;	//height on my screen
+const heightDict = {
+	large: 778,	//height on my screen
+	medium: 778,
+	small: 765,
+	xsmall: 813
+};
 const pub = process.env.PUBLIC_URL;
 
 const Resume = ({nextArticle, setArticle}) => {
 	const visible = nextArticle === 'resume';
+
+	const isMedium = useMedia('(max-width: 980px)');
+	const isSmall  = useMedia('(max-width: 768px)');
+	const isXSmall = useMedia('(max-width: 576px)');
+	let height;
+	if (isXSmall)
+		height = heightDict['xsmall'];
+	else if (isSmall)
+		height = heightDict['small'];
+	else if (isMedium)
+		height = heightDict['medium'];
+	else
+		height = heightDict['large'];
+	console.log(isMedium);
+	console.log(height);
 
   const fadeStyles = useSpring({
     config: { ...config.molasses },
