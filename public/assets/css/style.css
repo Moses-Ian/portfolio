@@ -243,12 +243,13 @@ h3 {
 }
 
 .resume {
+	font-size: 30px;
 	color: var(--secondary-color);
 	text-shadow: 
-		 1px  1px var(--primary-color),
-		-1px -1px var(--primary-color),
-		 1px -1px var(--primary-color),
-		-1px  1px var(--primary-color);
+		 2px  2px var(--primary-color),
+		-2px -2px var(--primary-color),
+		 2px -2px var(--primary-color),
+		-2px  2px var(--primary-color);
 }
 
 .resume:hover {
