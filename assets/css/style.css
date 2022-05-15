@@ -29,6 +29,7 @@ header {
 	justify-content: space-between;
 	background-color: var(--third-color);
 	height: 85px;
+	width: 100%;
 	align-items: center;
 	position: -webkit-sticky;
 	position: sticky;
