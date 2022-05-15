@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, useTransition, config, animated } from "react-spring";
+import {useMedia} from 'react-use';
 
 const pub = process.env.PUBLIC_URL;
+const showStyle = {
+	height: '50px',
+	width: '50px'
+}
 
 const Project = ({props}) => {
 	
+	const isXSmall = useMedia('(max-width: 576px)');
+
+	const opaqueStyle = {
+		backgroundImage: `url(${pub}/${props.img})`,
+		opacity: 1
+	};
+
 	const [isHovered, setIsHovered] = useState(false);
 	const hoverSpring = useSpring({
 		config: { ...config.gentle },
@@ -34,7 +46,7 @@ const Project = ({props}) => {
 		<animated.div 
 			className="project" 
 			id={props.id} 
-			style={hoverSpring} 
+			style={isXSmall ? {...opaqueStyle} : hoverSpring} 
 			onMouseOver={hover}
 			onMouseOut={unhover}
 		>
@@ -47,7 +59,7 @@ const Project = ({props}) => {
 				<a href={props.repo}>
 					<animated.img 
 						src={pub+'/assets/images/github.svg'} 
-						style={growSpring}
+						style={isXSmall ? showStyle : growSpring}
 					/>
 				</a>
 			</div>

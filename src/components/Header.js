@@ -17,8 +17,6 @@ const Header = ({currentArticle, setNextArticle}) => {
 	const isXSmall = useMedia('(max-width: 576px)');
 	
 	useEffect(() => {
-		console.log("useEffect");
-		console.log(isXSmall);
 		if (!isXSmall)
 			document.getElementById("links").style.display = "block";
 		else
