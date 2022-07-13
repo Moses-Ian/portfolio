@@ -10,7 +10,7 @@ const Footer = () => {
 				src="/assets/images/phone.svg"
 			/>
 			<FooterLink
-				href="mailto:ian.moses2@outlook.com"
+				href="mailto:IMoses2@hotmail.com"
 				src="/assets/images/email.svg"
 			/>
 			<FooterLink
