@@ -53,21 +53,36 @@ const Contact = ({nextArticle, setArticle}) => {
 	//error message nonsense
 	const [errorMessage, setErrorMessage] = useState('');
 	const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-	const { name, email, message } = formState;
 	
 	function handleChange(e) {
 
 		let err = '';
+		let value = e.target.value;
 		switch (e.target.name) {
 			case 'name':
+				setFormState({ 
+					name: value, 
+					email: formState.email, 
+					message: formState.message
+				});
 				if (!e.target.value.length)
 					err = 'Name is required.';
 				break;
 			case 'email':
+				setFormState({ 
+					name: formState.name, 
+					email: value, 
+					message: formState.message
+				});
 				if (!validateEmail(e.target.value))
 					err = 'Your email is invalid.';
 				break;
 			case 'message':
+				setFormState({ 
+					name: formState.name, 
+					email: formState.email, 
+					message: value
+				});
 				if (!e.target.value.length)
 					err = 'Message is required.';
 				break;
@@ -84,6 +99,13 @@ const Contact = ({nextArticle, setArticle}) => {
 	
 	function handleSubmit(e) {
 		e.preventDefault();
+		let err;
+		if (formState.name === '' || formState.email === '' || formState.message === '')
+			err = 'All fields are required';
+		else
+			setFormState({ name: '', email: '', message: '' });
+		setErrorMessage(err);
+		setHeight(calcHeight(err));
 		console.log(formState);
 	}
 	
@@ -119,15 +141,37 @@ const Contact = ({nextArticle, setArticle}) => {
 				<form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
 					<div>
 						<label htmlFor="name">Name:</label>
-						<input type="text" className="form-input" defaultValue={name} onBlur={handleChange} name="name" />
+						<input 
+							type="text" 
+							className="form-input" 
+							value={formState.name} 
+							onBlur={handleChange} 
+							name="name" 
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="email">Email address:</label>
-						<input type="email" className="form-input" defaultValue={email} name="email" onBlur={handleChange} />
+						<input 
+							type="email" 
+							className="form-input" 
+							value={formState.email}
+							name="email" 
+							onBlur={handleChange} 
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="message">Message:</label>
-						<textarea className="form-input" name="message" defaultValue={message} onBlur={handleChange} rows="5" cols="30" />
+						<textarea 
+							className="form-input" 
+							value={formState.message}
+							name="message" 
+							onBlur={handleChange} 
+							rows="5" 
+							cols="30" 
+							onChange={handleChange}
+						/>
 					</div>
 					{errorMessage && (
 						<div>

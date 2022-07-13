@@ -3,12 +3,12 @@ import { useSpring, useTransition, config, animated } from "react-spring";
 import {useMedia} from 'react-use';
 import Title from './Title';
 
-const height = 760;	//height on my screen
+const height = 802;	//height on my screen
 const heightDict = {
-	large: 778,	//height on my screen
-	medium: 778,
-	small: 765,
-	xsmall: 813
+	large: 820,	//height on my screen
+	medium: 820,
+	small: 807,
+	xsmall: 855
 };
 const pub = process.env.PUBLIC_URL;
 
@@ -60,9 +60,9 @@ const Resume = ({nextArticle, setArticle}) => {
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>
+					<li>React</li>
 					<li>JQuery</li>
 					<li>Responsive Design</li>
-					<li>React</li>
 					<li>Bootstrap</li>
 					<li>Foundation</li>
 					<li>Handlebars</li>
@@ -78,9 +78,11 @@ const Resume = ({nextArticle, setArticle}) => {
 					<li>REST</li>
 					<li>GraphQL</li>
 					<li>Socket.io</li>
+					<li>C# and .NET</li>
 				</ul>
 				<p>Soft Skills</p>
 				<ul>
+					<li>Test-Driven Development</li>
 					<li>Certified SCRUM Master</li>
 					<li>Kanban</li>
 					<li>Kaizen</li>

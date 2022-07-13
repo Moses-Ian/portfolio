@@ -6,6 +6,14 @@ import Title from './Title';
 
 const projects = [
 	{
+		id: 'l3tters',
+		title: 'L3tters',
+		tech: 'React/Socket.io/GraphQL',
+		link: 'https://l3tters.herokuapp.com/',
+		repo: 'https://github.com/Moses-Ian/letters',
+		img: 'assets/images/l3tters-preview.png'
+	},
+	{
 		id: 'deck-builder',
 		title: 'Deck Builder',
 		tech: 'Node/Express/MySQL',
@@ -22,20 +30,12 @@ const projects = [
 		img: 'assets/images/copyright-timer-preview.png'
 	},
 	{
-		id: 'calculator',
-		title: 'Calculator',
-		tech: 'React/Javascript/CSS',
-		link: '#',
-		repo: '#',
-		img: 'assets/images/mechanical_calculator.jpg'
-	},
-	{
-		id: 'code-quiz',
-		title: 'Code Quiz',
-		tech: 'Javascript/CSS',
-		link: 'https://moses-ian.github.io/code-quiz/',
-		repo: 'https://github.com/Moses-Ian/code-quiz',
-		img: 'assets/images/code-quiz-preview.png'
+		id: 'flocking',
+		title: 'Flocking Simulation',
+		tech: 'p5.js',
+		link: 'https://moses-ian.github.io/flocking/',
+		repo: 'https://github.com/Moses-Ian/flocking',
+		img: 'assets/images/flocking-preview.png'
 	},
 	{
 		id: 'run-buddy',
@@ -99,7 +99,7 @@ return (
 			<animated.div className="work-projects" style={fadeStyles}>
 			{
 				projects.map(project => (
-					<Project props={project} key={project.id}/>
+					<Project project={project} key={project.id}/>
 				))
 			}
 			</animated.div>

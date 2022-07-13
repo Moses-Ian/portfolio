@@ -18,7 +18,7 @@ const Footer = () => {
 				src="/assets/images/github.svg"
 			/>
 			<FooterLink
-				href="https://www.linkedin.com/in/ian-moses-613a1690/"
+				href="https://www.linkedin.com/in/moses-ian/"
 				src="/assets/images/linkedin.svg"
 			/>
 		</section>

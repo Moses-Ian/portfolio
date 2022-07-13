@@ -8,12 +8,12 @@ const showStyle = {
 	width: '50px'
 }
 
-const Project = ({props}) => {
+const Project = ({ project }) => {
 	
 	const isXSmall = useMedia('(max-width: 576px)');
 
 	const opaqueStyle = {
-		backgroundImage: `url(${pub}/${props.img})`,
+		backgroundImage: `url(${pub}/${project.img})`,
 		opacity: 1
 	};
 
@@ -21,7 +21,7 @@ const Project = ({props}) => {
 	const hoverSpring = useSpring({
 		config: { ...config.gentle },
 		from: {
-			backgroundImage: `url(${pub}/${props.img})`,
+			backgroundImage: `url(${pub}/${project.img})`,
 			opacity: 0.5
 			},
 		to: {opacity: isHovered ? 1 : 0.5}
@@ -45,18 +45,18 @@ const Project = ({props}) => {
 	return (
 		<animated.div 
 			className="project" 
-			id={props.id} 
+			id={project.id} 
 			style={isXSmall ? {...opaqueStyle} : hoverSpring} 
 			onMouseOver={hover}
 			onMouseOut={unhover}
 		>
 			<div className="project-title">
-				<h3>{props.title}</h3>
-				<p>{props.tech}</p>
+				<h3>{project.title}</h3>
+				<p>{project.tech}</p>
 			</div>
-			<a href={props.link}></a>
+			<a href={project.link} target='_blank'></a>
 			<div className='github'>
-				<a href={props.repo}>
+				<a href={project.repo} target="_blank">
 					<animated.img 
 						src={pub+'/assets/images/github.svg'} 
 						style={isXSmall ? showStyle : growSpring}
