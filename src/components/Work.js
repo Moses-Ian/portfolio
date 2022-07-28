@@ -38,12 +38,12 @@ const projects = [
 		img: 'assets/images/flocking-preview.png'
 	},
 	{
-		id: 'run-buddy',
-		title: 'Run Buddy',
-		tech: 'HTML/CSS',
-		link: 'https://moses-ian.github.io/run-buddy/',
-		repo: 'https://github.com/Moses-Ian/run-buddy',
-		img: 'assets/images/run-buddy-preview.png'
+		id: 'risk-campaign-calculator',
+		title: 'Risk Campaign Calculator',
+		tech: 'Android/Kotlin/Math',
+		link: '',
+		repo: 'https://github.com/Moses-Ian/risk-campaign-calculator',
+		img: 'assets/images/risk-preview.png'
 	}
 ]
 

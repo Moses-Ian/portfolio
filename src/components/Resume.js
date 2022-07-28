@@ -67,6 +67,7 @@ const Resume = ({nextArticle, setArticle}) => {
 					<li>Foundation</li>
 					<li>Handlebars</li>
 					<li>Progressive Web Applications</li>
+					<li>Android Apps / Kotlin</li>
 				</ul>
 				<p>Back-end Proficiencies</p>
 				<ul>
