@@ -1,24 +1,14 @@
 # Professional Portfolio
 
-THIS IS A WORK IN PROGRESS
-
 ## Description
 
-This is my professional portfolio. The intention is to show this to prospective employers in the hope that they'll like the projects within and hire me. 
+This is my portfolio. The intention is to show this to prospective employers in the hope that they'll like the projects within and hire me. If you are hiring, feel free to contact me.
 
 ## Website
 
 You can access the deployed website here:
 <br>
 https://moses-ian.github.io/portfolio/
-
-### Screenshot
-
-![screenshot](./assets/images/screenshot.png)
-
-## Dead Links
-
-* The Calculator project is a placeholder.
 
 ## Credits
 

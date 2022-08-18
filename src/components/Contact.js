@@ -111,35 +111,36 @@ const Contact = ({nextArticle, setArticle}) => {
 			return;
 		}
 		
-		const email = Email;
-		email.personalizations[0].cc[0] = {
-			email: formState.email,
-			name: formState.name
-		};
-		email.content[0].value = formState.message;
-		email.reply_to = {
-			email: formState.email,
-			name: formState.name
-		};
+		// this needs to be moved to a server
+		// const email = Email;
+		// email.personalizations[0].cc[0] = {
+			// email: formState.email,
+			// name: formState.name
+		// };
+		// email.content[0].value = formState.message;
+		// email.reply_to = {
+			// email: formState.email,
+			// name: formState.name
+		// };
 		
-		fetch('https://api.sendgrid.com/v3/mail/send', {
-			method: 'post',
-			headers: {
-				'Content-type': 'application/json',
-				'Authorization': 'Bearer ' + process.env.REACT_APP_SENDGRID_API_KEY
-			},
-			body: JSON.stringify({ email })
-		})
-			.then(() =>	{
-				setErrorMessage('Email sent');
-				setHeight(calcHeight(err));
-				setFormState({ name: '', email: '', message: '' });
-			})
-			.catch(err => {
-				console.error(err)
-				setErrorMessage('Something went wrong');
-				setHeight(calcHeight(err));
-			})
+		// fetch('https://api.sendgrid.com/v3/mail/send', {
+			// method: 'post',
+			// headers: {
+				// 'Content-type': 'application/json',
+				// 'Authorization': 'Bearer ' + process.env.SENDGRID_API_KEY
+			// },
+			// body: JSON.stringify({ email })
+		// })
+			// .then(() =>	{
+				// setErrorMessage('Email sent');
+				// setHeight(calcHeight(err));
+				// setFormState({ name: '', email: '', message: '' });
+			// })
+			// .catch(err => {
+				// console.error(err)
+				// setErrorMessage('Something went wrong');
+				// setHeight(calcHeight(err));
+			// })
 		
 		
 	}
