@@ -5,7 +5,6 @@ import { validateEmail } from '../utils/helpers';
 import Title from './Title';
 import { Spring, Fade } from '../utils/spring';
 import { Email } from '../utils/Email';
-console.log(process.env.REACT_APP_SENDGRID_API_KEY);
 
 // const heightDefault = 357;	//height on my screen
 // const heightError = 407;		//height on my screen
