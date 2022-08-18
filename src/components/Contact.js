@@ -4,6 +4,8 @@ import {useMedia} from 'react-use';
 import { validateEmail } from '../utils/helpers';
 import Title from './Title';
 import { Spring, Fade } from '../utils/spring';
+import { Email } from '../utils/Email';
+console.log(process.env.REACT_APP_SENDGRID_API_KEY);
 
 // const heightDefault = 357;	//height on my screen
 // const heightError = 407;		//height on my screen
@@ -103,13 +105,44 @@ const Contact = ({nextArticle, setArticle}) => {
 	function handleSubmit(e) {
 		e.preventDefault();
 		let err;
-		if (formState.name === '' || formState.email === '' || formState.message === '')
+		if (formState.name === '' || formState.email === '' || formState.message === '') {
 			err = 'All fields are required';
-		else
-			setFormState({ name: '', email: '', message: '' });
-		setErrorMessage(err);
-		setHeight(calcHeight(err));
-		console.log(formState);
+			setErrorMessage(err);
+			setHeight(calcHeight(err));
+			return;
+		}
+		
+		const email = Email;
+		email.personalizations[0].cc[0] = {
+			email: formState.email,
+			name: formState.name
+		};
+		email.content[0].value = formState.message;
+		email.reply_to = {
+			email: formState.email,
+			name: formState.name
+		};
+		
+		fetch('https://api.sendgrid.com/v3/mail/send', {
+			method: 'post',
+			headers: {
+				'Content-type': 'application/json',
+				'Authorization': 'Bearer ' + process.env.REACT_APP_SENDGRID_API_KEY
+			},
+			body: JSON.stringify({ email })
+		})
+			.then(() =>	{
+				setErrorMessage('Email sent');
+				setHeight(calcHeight(err));
+				setFormState({ name: '', email: '', message: '' });
+			})
+			.catch(err => {
+				console.error(err)
+				setErrorMessage('Something went wrong');
+				setHeight(calcHeight(err));
+			})
+		
+		
 	}
 	
 	//animation nonsense

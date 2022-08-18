@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSpring, useTransition, config, animated } from "react-spring";
+import React, { useState } from 'react';
+import { useSpring, config, animated } from "react-spring";
 import {useMedia} from 'react-use';
 
 const pub = process.env.PUBLIC_URL;
@@ -54,9 +54,9 @@ const Project = ({ project }) => {
 				<h3>{project.title}</h3>
 				<p>{project.tech}</p>
 			</div>
-			<a href={project.link} target='_blank'></a>
+			<a href={project.link} target='_blank' rel='noreferrer'></a>
 			<div className='github'>
-				<a href={project.repo} target="_blank">
+				<a href={project.repo} target="_blank" rel='noreferrer'>
 					<animated.img 
 						src={pub+'/assets/images/github.svg'} 
 						style={isXSmall ? showStyle : growSpring}

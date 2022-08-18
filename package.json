@@ -4,6 +4,7 @@
   "homepage": "http://moses-ian.github.io/portfolio",
   "private": true,
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",

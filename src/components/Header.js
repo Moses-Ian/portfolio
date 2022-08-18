@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {useMedia} from 'react-use';
 
 const pub = process.env.PUBLIC_URL;
@@ -49,7 +49,7 @@ const Header = ({currentArticle, setNextArticle}) => {
 				</div>
 			</nav>
 			<a className="icon" onClick={toggleNav}>
-				<img className="hamburger" src={pub + "/assets/images/hamburger-icon.png"} />
+				<img className="hamburger" src={pub + "/assets/images/hamburger-icon.png"} alt="" />
 			</a>
 		</header>
 	)

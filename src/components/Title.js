@@ -1,18 +1,9 @@
 import React from 'react';
-import { useSpring, useTransition, config, animated } from "react-spring";
+import { useSpring, config, animated } from "react-spring";
 
-const height = 500;
+// const height = 500;
 
 const Title = ({title, visible}) => {
-	
-  const fadeStyles = useSpring({
-    config: { ...config.stiff },
-    from: { opacity: 0 },
-    to: {
-      opacity: visible ? 1 : 0
-    },
-		leave: { opacity: 0 }
-  });
 	
   const slideInStyles = useSpring({
     config: { ...config.slow },
