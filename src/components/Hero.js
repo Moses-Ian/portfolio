@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Hero = () => {
 	return (
 		<section className="hero">
 			<div className="subtitle">
-				I'll guide you to the Promised Land!
+				An amazing web developer!
 			</div>
 		</section>
 	)

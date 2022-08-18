@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useSpring, useTransition, config, animated } from "react-spring";
+import React, { useEffect } from 'react';
+import { useSpring, animated } from "react-spring";
 import {useMedia} from 'react-use';
 import Title from './Title';
+import { Spring, Fade } from '../utils/spring';
 
-const height = 802;	//height on my screen
+// const height = 802;	//height on my screen
 const heightDict = {
-	large: 820,	//height on my screen
-	medium: 820,
-	small: 807,
-	xsmall: 855
+	large: 850,	//height on my screen
+	medium: 850,
+	small: 837,
+	xsmall: 885
 };
 const pub = process.env.PUBLIC_URL;
 
@@ -29,25 +30,17 @@ const Resume = ({nextArticle, setArticle}) => {
 		height = heightDict['large'];
 
   const fadeStyles = useSpring({
-    config: { ...config.molasses },
-    from: { opacity: 0 },
-    to: {
-      opacity: visible ? 1 : 0
-    },
-		leave: { opacity: 0 }
+    ...Fade,
+    to: Fade.to(visible),
   });
 	
   const slideInStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { opacity: 0, height: 0 },
-    to: {
-      opacity: visible ? 1 : 0,
-      height: visible ? height : 0
-    }
+    ...Spring,
+    to: Spring.to(visible, height)
   });
 
 	useEffect(() => {
-		setTimeout(() => setArticle(nextArticle), 500);
+		setTimeout(() => setArticle(nextArticle), 750);
 	});
 
 	return (
@@ -59,7 +52,7 @@ const Resume = ({nextArticle, setArticle}) => {
 				<ul>
 					<li>HTML</li>
 					<li>CSS</li>
-					<li>JavaScript</li>
+					<li>JavaScript / TypeScript</li>
 					<li>React</li>
 					<li>JQuery</li>
 					<li>Responsive Design</li>
@@ -71,6 +64,7 @@ const Resume = ({nextArticle, setArticle}) => {
 				</ul>
 				<p>Back-end Proficiencies</p>
 				<ul>
+					<li>AWS</li>
 					<li>APIs</li>
 					<li>Node</li>
 					<li>Express</li>

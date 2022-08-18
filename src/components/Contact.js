@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSpring, useTransition, config, animated } from "react-spring";
+import { useSpring, animated } from "react-spring";
 import {useMedia} from 'react-use';
 import { validateEmail } from '../utils/helpers';
 import Title from './Title';
+import { Spring, Fade } from '../utils/spring';
 
-const heightDefault = 357;	//height on my screen
-const heightError = 407;		//height on my screen
+// const heightDefault = 357;	//height on my screen
+// const heightError = 407;		//height on my screen
 const heightDict = {
 	large: 357,	//height on my screen
 	largeErr: 407,	//height on my screen
@@ -86,6 +87,8 @@ const Contact = ({nextArticle, setArticle}) => {
 				if (!e.target.value.length)
 					err = 'Message is required.';
 				break;
+			default:
+				break;
 		}
 
 		setErrorMessage(err);
@@ -113,25 +116,17 @@ const Contact = ({nextArticle, setArticle}) => {
 	const visible = nextArticle === 'contact';
 
   const fadeStyles = useSpring({
-    config: { ...config.molasses },
-    from: { opacity: 0 },
-    to: {
-      opacity: visible ? 1 : 0
-    },
-		leave: { opacity: 0 }
+    ...Fade,
+    to: Fade.to(visible),
   });
 	
   const slideInStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { opacity: 0, height: 0 },
-    to: {
-      opacity: visible ? 1 : 0,
-      height: visible ? height : 0
-    }
+    ...Spring,
+    to: Spring.to(visible, height)
   });
 
 	useEffect(() => {
-		setTimeout(() => setArticle(nextArticle), 500);
+		setTimeout(() => setArticle(nextArticle), 750);
 	});
 
 	return (

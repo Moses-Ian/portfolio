@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useSpring, useTransition, config, animated } from "react-spring";
+import React, { useEffect } from 'react';
+import { useSpring, animated } from "react-spring";
 import {useMedia} from 'react-use';
 import Project from './Project';
 import Title from './Title';
+import { Spring, Fade } from '../utils/spring';
 
 const projects = [
 	{
@@ -41,9 +42,17 @@ const projects = [
 		id: 'risk-campaign-calculator',
 		title: 'Risk Campaign Calculator',
 		tech: 'Android/Kotlin/Math',
-		link: '',
+		link: 'https://play.google.com/store/apps/details?id=com.mosesian.riskcampaigncalculator',
 		repo: 'https://github.com/Moses-Ian/risk-campaign-calculator',
 		img: 'assets/images/risk-preview.png'
+	},
+	{
+		id: 'snake-A-Star',
+		title: 'Snake with A* Algorithm',
+		tech: 'p5/A*',
+		link: 'https://moses-ian.github.io/snake-A-Star/',
+		repo: 'https://github.com/Moses-Ian/risk-campaign-calculator',
+		img: 'assets/images/snake-preview.png'
 	}
 ]
 
@@ -72,25 +81,17 @@ const Work = ({nextArticle, setArticle}) => {
 		height = heightDict['large'];
 
   const fadeStyles = useSpring({
-    config: { ...config.molasses },
-    from: { opacity: 0 },
-    to: {
-      opacity: visible ? 1 : 0
-    },
-		leave: { opacity: 0 }
+    ...Fade,
+    to: Fade.to(visible),
   });
 	
   const slideInStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { opacity: 0, height: 0 },
-    to: {
-      opacity: visible ? 1 : 0,
-      height: visible ? height : 0
-    }
+    ...Spring,
+    to: Spring.to(visible, height)
   });
 
 	useEffect(() => {
-		setTimeout(() => setArticle(nextArticle), 500);
+		setTimeout(() => setArticle(nextArticle), 750);
 	});
 
 return (
