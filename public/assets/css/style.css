@@ -208,10 +208,10 @@ h3 {
 
 /* INDIVIDUAL PROJECTS */
 /* Use this only if there is an odd number of projects */
-/* .project:first-child { */
-	/* height: 364px; */
-	/* flex: 1 0 364px; */
-/* } */
+.project:first-child {
+	height: 364px;
+	flex: 1 0 364px;
+}
 
 .github {
 	position: absolute;

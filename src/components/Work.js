@@ -53,6 +53,14 @@ const projects = [
 		link: 'https://moses-ian.github.io/snake-A-Star/',
 		repo: 'https://github.com/Moses-Ian/risk-campaign-calculator',
 		img: 'assets/images/snake-preview.png'
+	},
+	{
+		id: 'minesweeper-solver',
+		title: 'Minesweeper Bot',
+		tech: 'C#/Selenium',
+		link: 'https://moses-ian.github.io/minesweeper-solver/',
+		repo: 'https://github.com/Moses-Ian/minesweeper-solver',
+		img: 'assets/images/minesweeper-preview.png'
 	}
 ]
 
