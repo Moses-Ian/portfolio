@@ -61,6 +61,14 @@ const projects = [
 		link: 'https://moses-ian.github.io/minesweeper-solver/',
 		repo: 'https://github.com/Moses-Ian/minesweeper-solver',
 		img: 'assets/images/minesweeper-preview.png'
+	},
+	{
+		id: 'rubiks-cube-A-star',
+		title: "Rubik's Cube with A*",
+		tech: 'three.js/A*',
+		link: 'https://moses-ian.github.io/rubiks-cube-a-star/',
+		repo: 'https://github.com/Moses-Ian/rubiks-cube-a-star',
+		img: 'assets/images/rubik-preview.png'
 	}
 ]
 
