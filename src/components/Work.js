@@ -51,7 +51,7 @@ const projects = [
 		title: 'Snake with A* Algorithm',
 		tech: 'p5/A*',
 		link: 'https://moses-ian.github.io/snake-A-Star/',
-		repo: 'https://github.com/Moses-Ian/risk-campaign-calculator',
+		repo: 'https://github.com/Moses-Ian/snake-A-Star',
 		img: 'assets/images/snake-preview.png'
 	},
 	{
