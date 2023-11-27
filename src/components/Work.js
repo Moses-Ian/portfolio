@@ -36,7 +36,8 @@ const projects = [
 		tech: 'p5.js',
 		link: 'https://moses-ian.github.io/flocking/',
 		repo: 'https://github.com/Moses-Ian/flocking',
-		img: 'assets/images/flocking-preview.png'
+		//img: 'assets/images/flocking-preview.png'
+		img: 'assets/images/flocking_animation.gif'
 	},
 	{
 		id: 'risk-campaign-calculator',
