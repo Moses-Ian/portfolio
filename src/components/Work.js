@@ -70,14 +70,22 @@ const projects = [
 		link: 'https://moses-ian.github.io/rubiks-cube-a-star/',
 		repo: 'https://github.com/Moses-Ian/rubiks-cube-a-star',
 		img: 'assets/images/rubik-preview.png'
+	},
+	{
+		id: 'lazer-defender',
+		title: "Lazer Defender",
+		tech: 'Unity',
+		link: 'https://moses-ian.github.io/Lazer-Defender/',
+		repo: 'https://github.com/Moses-Ian/lazer-defender',
+		img: 'assets/images/lazer-defender-preview.png'
 	}
 ]
 
 const heightDict = {
-	large: 582,	//height on my screen
-	medium: 1050,
-	small: 1018,
-	xsmall: 1065
+	large: 782,	//height on my screen
+	medium: 1250,
+	small: 1218,
+	xsmall: 1265
 };
 
 const Work = ({nextArticle, setArticle}) => {

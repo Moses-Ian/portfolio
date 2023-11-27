@@ -153,8 +153,8 @@ h2 {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-right: var(--right-margin-large);
-	max-height: 600px;
-	min-height: 582px;
+	max-height: 800px;
+	min-height: 782px;
 	flex: 1 0 0;
 	overflow: hidden;
 }
@@ -208,10 +208,10 @@ h3 {
 
 /* INDIVIDUAL PROJECTS */
 /* Use this only if there is an odd number of projects */
-/*.project:first-child {
+.project:first-child {
 	height: 364px;
 	flex: 1 0 364px;
-}*/
+}
 
 .github {
 	position: absolute;
