@@ -56,7 +56,7 @@ const About = ({nextArticle, setArticle}) => {
 			<Title title='About Me' visible={visible}/>
 			<animated.div className="about-text" style={fadeStyles}>
 				<p>
-					Full stack web developer leveraging engineering background to build functional web apps. Innovative problem solver with extensive experience in math and engineering. Excited to deliver value to customers alongside peers.
+					Automation Engineer leveraging engineering background to build value-adding automated systems. Innovative problem solver with extensive experience in math and engineering. Excited to deliver value to customers alongside peers.
 
 				</p>
 				<p>
