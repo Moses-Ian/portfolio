@@ -6,10 +6,10 @@ import { Spring, Fade } from '../utils/spring';
 
 // const height = 802;	//height on my screen
 const heightDict = {
-	large: 850,	//height on my screen
-	medium: 850,
-	small: 837,
-	xsmall: 885
+	large: 900,	//height on my screen
+	medium: 900,
+	small: 887,
+	xsmall: 935
 };
 const pub = process.env.PUBLIC_URL;
 
@@ -47,7 +47,12 @@ const Resume = ({nextArticle, setArticle}) => {
 		<animated.article style={slideInStyles}>
 			<Title title='Resume' visible={visible} />
 			<animated.div className='about-text' style={fadeStyles}>
-				<h3><a className='resume' href={pub + '/assets/files/ian-moses-full-stack-developer.pdf'}>Download my resume.</a></h3>
+				<h3><a className='resume' href={pub + '/assets/files/ian-moses-automation-engineer.pdf'}>Download my resume.</a></h3>
+				<p>Automation Proficiencies</p>
+				<ul>
+					<li>Selenium</li>
+					<li>AutoIt</li>
+				</ul>
 				<p>Front-end Proficiencies</p>
 				<ul>
 					<li>HTML</li>
@@ -85,6 +90,10 @@ const Resume = ({nextArticle, setArticle}) => {
 					<li>Organization</li>
 					<li>Teamwork</li>
 					<li>Adaptability</li>
+				</ul>
+				<p>Miscellaneous</p>
+				<ul>
+					<li>Unity</li>
 				</ul>
 			</animated.div>
 		</animated.article>

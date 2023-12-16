@@ -83,9 +83,9 @@ const projects = [
 
 const heightDict = {
 	large: 782,	//height on my screen
-	medium: 1250,
-	small: 1218,
-	xsmall: 1265
+	medium: 1870,
+	small: 1808,
+	xsmall: 1805
 };
 
 const Work = ({nextArticle, setArticle}) => {
