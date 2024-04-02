@@ -78,6 +78,14 @@ const projects = [
 		link: 'https://moses-ian.github.io/Lazer-Defender/',
 		repo: 'https://github.com/Moses-Ian/lazer-defender',
 		img: 'assets/images/lazer-defender-preview.png'
+	},
+	{
+		id: 'metaballs',
+		title: "Metaballs",
+		tech: 'Shaders',
+		link: 'https://moses-ian.github.io/metaballs/',
+		repo: 'https://github.com/Moses-Ian/metaballs',
+		img: 'assets/images/metaballs-preview.png'
 	}
 ]
 
