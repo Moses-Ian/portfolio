@@ -140,7 +140,7 @@ float pattern(vec3 p, out vec3 q, out vec3 r) {
 }
 
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+void main( out vec4 fragColor, in vec2 fragCoord )
 {
     // Normalized pixel coordinates (from 0 to 1)
     vec2 st = fragCoord/iResolution.xy;
