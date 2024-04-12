@@ -4,7 +4,7 @@ let basicShader;
 let x;
 
 function preload() {
-	//basicShader = loadShader("%PUBLIC_URL%/assets/p5/shader.vert", "%PUBLIC_URL%/assets/p5/shader.frag");
+	basicShader = loadShader("%PUBLIC_URL%/assets/p5/shader.vert", "%PUBLIC_URL%/assets/p5/shader.frag");
 	//console.log(basicShader);
 	
 	// fetch(testText)
@@ -31,10 +31,10 @@ function draw() {
 	x+=1;
 	
 	// define shader inputs like this
-	//basicShader.setUniform('custom_color', [0.4, 0.02, 0.8]);	// colors are 0-1
+	basicShader.setUniform('custom_color', [0.4, 0.02, 0.8]);	// colors are 0-1
 	
 	
-	//rectMode(CENTER);
-	//shader(basicShader);
-	//rect(0, 0, width-10, height-10);
+	rectMode(CENTER);
+	shader(basicShader);
+	rect(0, 0, width-10, height-10);
 }
