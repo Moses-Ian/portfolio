@@ -118,28 +118,28 @@ float fractalBrownianMotion ( in vec3 _st) {
     return v;
 }
 
-// float pattern(vec3 p, out vec3 q, out vec3 r) {
+float pattern(vec3 p, out vec3 q, out vec3 r) {
     // wrap it once
-    // vec3 offset1 = vec3(0.0);
-    // vec3 offset2 = vec3(5.2, 1.3, 0.0); // arbitrary
-    // float distortionLevel1 = 2.0;  // chosen based on visual effect
+    vec3 offset1 = vec3(0.0);
+    vec3 offset2 = vec3(5.2, 1.3, 0.0); // arbitrary
+    float distortionLevel1 = 2.0;  // chosen based on visual effect
     // by exposing q, we can choose a color based on it
-    // q = vec3(fractalBrownianMotion(p + offset1), fractalBrownianMotion(p + offset2), p.z);
+    q = vec3(fractalBrownianMotion(p + offset1), fractalBrownianMotion(p + offset2), p.z);
 
     // wrap it again
-    // vec3 offset3 = vec3(1.7, 9.2, 0.0);
-    // vec3 offset4 = vec3(8.3, 2.8, 0.0); // arbitrary
-    // float distortionLevel2 = 0.5;  // chosen based on visual effect
+    vec3 offset3 = vec3(1.7, 9.2, 0.0);
+    vec3 offset4 = vec3(8.3, 2.8, 0.0); // arbitrary
+    float distortionLevel2 = 0.5;  // chosen based on visual effect
     // by exposing r, we can choose a color based on it
-    // r = vec3(
-        // fractalBrownianMotion(p + distortionLevel1*q + offset3),
-        // fractalBrownianMotion(p + distortionLevel1*q + offset4),
-        // p.z);
+    r = vec3(
+        fractalBrownianMotion(p + distortionLevel1*q + offset3),
+        fractalBrownianMotion(p + distortionLevel1*q + offset4),
+        p.z);
 
-    //return fractalBrownianMotion( p );
-    //return fractalBrownianMotion( p + distortionLevel1*q );
-    // return fractalBrownianMotion( p + distortionLevel2*r );
-// }
+    // return fractalBrownianMotion( p );
+    // return fractalBrownianMotion( p + distortionLevel1*q );
+    return fractalBrownianMotion( p + distortionLevel2*r );
+}
 
 
 void main()
@@ -149,25 +149,25 @@ void main()
     st.x *= u_resolution.x / u_resolution.y;
     
     // colors
-    // vec3 darkRust = vec3(0.654, 0.271, 0.0);
-    // vec3 lightRust = vec3(1.0, 0.729, 0.345);
-    // vec3 darkBlue = vec3(0.0, 0.458, 0.580);
-    // vec3 lightBlue = vec3(0.0, 0.956, 1.0);
+    vec3 darkRust = vec3(0.654, 0.271, 0.0);
+    vec3 lightRust = vec3(1.0, 0.729, 0.345);
+    vec3 darkBlue = vec3(0.0, 0.458, 0.580);
+    vec3 lightBlue = vec3(0.0, 0.956, 1.0);
 
     // Time varying pixel color
     vec3 color = vec3(0.25);
     vec3 p = vec3(st*2.0, u_time*0.1);
     vec3 q;
     vec3 r;
-		  color = vec3(snoise(p));
-			//color = vec3(pattern( p, q, r ) + 0.3);
-    // float f = pattern( p, q, r );
-    // float percent = clamp(f*f*4.0, 0.0, 1.0);
-    // color = mix(lightBlue, lightRust, percent);
-    // percent = clamp(3.0*length(q.x), 0.0, 1.0);
-    // color = mix(color, darkBlue, percent);
-    // percent = clamp(1.2*length(r.y), 0.0, 1.0);
-    // color = mix(color, darkRust, percent);
+		  // color = vec3(snoise(p));
+			color = vec3(pattern( p, q, r ) + 0.3);
+    float f = pattern( p, q, r );
+    float percent = clamp(f*f*4.0, 0.0, 1.0);
+    color = mix(lightBlue, lightRust, percent);
+    percent = clamp(3.0*length(q.x), 0.0, 1.0);
+    color = mix(color, darkBlue, percent);
+    percent = clamp(1.2*length(r.y), 0.0, 1.0);
+    color = mix(color, darkRust, percent);
     
     // Output to screen
     gl_FragColor = vec4(color,1.0);
