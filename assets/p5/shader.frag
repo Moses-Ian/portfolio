@@ -140,10 +140,10 @@ float pattern(vec3 p, out vec3 q, out vec3 r) {
 }
 
 
-void main( out vec4 fragColor, in vec2 fragCoord )
+void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
-    vec2 st = fragCoord/iResolution.xy;
+    vec2 st = gl_FragCoord.xy/iResolution.xy;
     st.x *= iResolution.x / iResolution.y;
     
     // colors
@@ -168,5 +168,5 @@ void main( out vec4 fragColor, in vec2 fragCoord )
     color = mix(color, darkRust, percent);
     
     // Output to screen
-    fragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color,1.0);
 }
