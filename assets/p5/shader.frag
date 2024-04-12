@@ -1,10 +1,12 @@
-//#define NUM_OCTAVES 5
+precision highp float;
 
-//uniform vec2 iResolution;
-//uniform float iTime;
+#define NUM_OCTAVES 5
 
-//vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
-//vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+uniform vec2 u_resolution;
+uniform float iTime;
+
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
 
 // float random (in vec2 _st) {
     // return fract(sin(dot(_st.xy,
