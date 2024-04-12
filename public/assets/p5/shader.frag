@@ -1,6 +1,6 @@
 //#define NUM_OCTAVES 5
 
-//uniform vec2 iResolution;
+uniform vec2 u_resolution;
 //uniform float iTime;
 
 //vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}

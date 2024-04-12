@@ -26,8 +26,8 @@ function draw() {
 	background(51);
 	
 	// define shader inputs like this
-	basicShader.setUniform('iResolution', [width, height]);
-	basicShader.setUniform('iTime', performance.now() / 1000);	// colors are 0-1
+	basicShader.setUniform('u_resolution', [width, height]);
+	basicShader.setUniform('u_time', performance.now() / 1000);	// colors are 0-1
 	
 	
 	rectMode(CENTER);
