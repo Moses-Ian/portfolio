@@ -106,7 +106,7 @@ float fractalBrownianMotion ( in vec3 _st) {
     float v = 0.0;
     float a = 0.5;
     vec3 shift = vec3(100.0);
-    Rotate to reduce axial bias
+    // Rotate to reduce axial bias
     mat3 rot = mat3(cos(0.5), sin(0.5), 0.0,
                     -sin(0.5), cos(0.50), 0.0,
                     0.0, 0.0, 0.0);
