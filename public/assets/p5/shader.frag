@@ -1,3 +1,5 @@
+// Based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
 precision highp float;
 
 #define NUM_OCTAVES 5
@@ -14,8 +16,6 @@ float random (in vec2 _st) {
         43758.5453123);
 }
 
-// Based on Morgan McGuire @morgan3d
-// https://www.shadertoy.com/view/4dS3Wd
 float noise (in vec2 _st) {
     vec2 i = floor(_st);
     vec2 f = fract(_st);
@@ -171,6 +171,4 @@ void main()
     
     // Output to screen
     gl_FragColor = vec4(color,1.0);
-	// vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-	// gl_FragColor = vec4(uv.x, 0.0, uv.y, 1.0);
 }
