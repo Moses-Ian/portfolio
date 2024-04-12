@@ -1,7 +1,6 @@
 // this code works if you're just showing the shader
 // look at metaballs if you are showing multiple shaders
 let basicShader;
-let x;
 
 function preload() {
 	basicShader = loadShader("https://raw.githubusercontent.com/Moses-Ian/portfolio/main/public/assets/p5/shader.vert", "https://raw.githubusercontent.com/Moses-Ian/portfolio/main/public/assets/p5/shader.frag");
@@ -12,7 +11,6 @@ function preload() {
 		// .then(text => console.log(text))
 		// .catch(e => console.error(e));
 		
-	x = 0;
 }
 
 function setup() {
@@ -26,9 +24,6 @@ function setup() {
 function draw() {
   // put drawing code here
 	background(51);
-	
-	circle(x, 25, 50)
-	x+=1;
 	
 	// define shader inputs like this
 	basicShader.setUniform('iResolution', [width, height]);
