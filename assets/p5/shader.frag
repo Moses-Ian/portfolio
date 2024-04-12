@@ -160,7 +160,7 @@ void main()
     vec3 q;
     vec3 r;
 		  // color = vec3(snoise(p));
-			color = vec3(pattern( p, q, r ) + 0.3);
+			// color = vec3(pattern( p, q, r ) + 0.3);
     float f = pattern( p, q, r );
     float percent = clamp(f*f*4.0, 0.0, 1.0);
     color = mix(lightBlue, lightRust, percent);
