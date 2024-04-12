@@ -4,7 +4,7 @@ let basicShader;
 let x;
 
 function preload() {
-	basicShader = loadShader("%PUBLIC_URL%/assets/p5/shader.vert", "%PUBLIC_URL%/assets/p5/shader.frag");
+	basicShader = loadShader("https://raw.githubusercontent.com/Moses-Ian/portfolio/main/public/assets/p5/shader.vert", "https://raw.githubusercontent.com/Moses-Ian/portfolio/main/public/assets/p5/shader.frag");
 	//console.log(basicShader);
 	
 	// fetch(testText)
