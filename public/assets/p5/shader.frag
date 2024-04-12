@@ -1,6 +1,7 @@
 precision highp float;
 
 // variables that get set by my custom sketch
+uniform vec2 u_resolution;
 uniform vec3 custom_color;
 
 
