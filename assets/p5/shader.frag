@@ -145,8 +145,8 @@ float noise (in vec2 _st) {
 void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
-    //vec2 st = gl_FragCoord.xy/iResolution.xy;
-    //st.x *= iResolution.x / iResolution.y;
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st.x *= u_resolution.x / u_resolution.y;
     
     // colors
     // vec3 darkRust = vec3(0.654, 0.271, 0.0);
@@ -155,7 +155,7 @@ void main()
     // vec3 lightBlue = vec3(0.0, 0.956, 1.0);
 
     // Time varying pixel color
-    // vec3 color = vec3(0.25);
+    vec3 color = vec3(0.25);
     // vec3 p = vec3(st*2.0, iTime*0.1);
     // vec3 q;
     // vec3 r;
@@ -170,7 +170,8 @@ void main()
     // color = mix(color, darkRust, percent);
     
     // Output to screen
-    //gl_FragColor = vec4(color,1.0);
-	vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-	gl_FragColor = vec4(uv.x, 0.0, uv.y, 1.0);
+    // gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color,1.0);
+	// vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+	// gl_FragColor = vec4(uv.x, 0.0, uv.y, 1.0);
 }
