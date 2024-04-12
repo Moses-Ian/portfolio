@@ -3,7 +3,7 @@ precision highp float;
 #define NUM_OCTAVES 5
 
 uniform vec2 u_resolution;
-uniform float iTime;
+uniform float u_time;
 
 vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
 vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
@@ -156,7 +156,7 @@ void main()
 
     // Time varying pixel color
     vec3 color = vec3(0.25);
-    vec3 p = vec3(st*2.0, iTime*0.1);
+    vec3 p = vec3(st*2.0, u_time*0.1);
     vec3 q;
     vec3 r;
 		  color = vec3(snoise(p));
