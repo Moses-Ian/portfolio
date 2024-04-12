@@ -106,7 +106,7 @@ nav a:active {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
-	/* background-image: url("../images/weathered_snow_fences.jpg"); */
+	background-color: #1ed5d3;
 	background-size: cover;
 	background-position: center;
 	position: relative;
