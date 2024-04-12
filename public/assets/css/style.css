@@ -108,6 +108,13 @@ nav a:active {
 	background-image: url("../images/weathered_snow_fences.jpg");
 	background-size: cover;
 	background-position: center;
+	position: relative;
+}
+
+.hero-canvas {
+	width: calc(100% - 6px);
+	height: calc(100% - 6px);
+	border: 3px solid red;
 }
 
 .subtitle {
@@ -116,6 +123,7 @@ nav a:active {
 	margin: 25px var(--right-margin-large);
 	padding: 15px;
 	font-size: 26px;
+	position: absolute;
 }
 
 /* ARTICLE */
