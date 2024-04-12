@@ -102,21 +102,21 @@ float snoise(vec3 v){
                                 dot(p2,x2), dot(p3,x3) ) );
 }
 
-// float fractalBrownianMotion ( in vec3 _st) {
-    // float v = 0.0;
-    // float a = 0.5;
-    // vec3 shift = vec3(100.0);
-    // Rotate to reduce axial bias
-    // mat3 rot = mat3(cos(0.5), sin(0.5), 0.0,
-                    // -sin(0.5), cos(0.50), 0.0,
-                    // 0.0, 0.0, 0.0);
-    // for (int i = 0; i < NUM_OCTAVES; ++i) {
-        // v += a * snoise(_st);
-        // _st = rot * _st * 2.0 + shift;
-        // a *= 0.5;
-    // }
-    // return v;
-// }
+float fractalBrownianMotion ( in vec3 _st) {
+    float v = 0.0;
+    float a = 0.5;
+    vec3 shift = vec3(100.0);
+    Rotate to reduce axial bias
+    mat3 rot = mat3(cos(0.5), sin(0.5), 0.0,
+                    -sin(0.5), cos(0.50), 0.0,
+                    0.0, 0.0, 0.0);
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+        v += a * snoise(_st);
+        _st = rot * _st * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
 
 // float pattern(vec3 p, out vec3 q, out vec3 r) {
     // wrap it once
