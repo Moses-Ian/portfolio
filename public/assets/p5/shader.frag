@@ -1,3 +1,5 @@
+precision highp float;
+
 //#define NUM_OCTAVES 5
 
 uniform vec2 u_resolution;
